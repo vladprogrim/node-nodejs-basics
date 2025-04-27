@@ -1,5 +1,12 @@
+import fs from "fs";
+
 const rename = async () => {
-    // Write your code here 
+  fs.rename("./files/wrongFilename.txt", "./files/properFilename.md", (err) => {
+    if (err) {
+      console.log("FS operation failed");
+      throw err;
+    }
+  });
 };
 
 await rename();
